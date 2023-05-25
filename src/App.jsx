@@ -30,17 +30,6 @@ function App() {
     ])
   }
 
-  const completeTask = (id) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((tasks) => {
-        if (tasks.id === id) {
-          return { ...tasks, completed: !tasks.completed };
-        }
-        return tasks;
-      })
-    );
-  };
-
   const deleteTask = (newTask) => {
     setTasks((prevTasks) => 
     prevTasks.filter((task) => task.Status !== newTask));

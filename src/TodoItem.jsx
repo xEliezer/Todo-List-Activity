@@ -2,7 +2,7 @@ import { useState } from "react"
 import TodoForm from "./TodoForm"
 
 
-function TodoItem({ tasknumber, taskname, deleteTask }) {
+function TodoItem({ tasknumber, taskname }) {
 
     const [complete, setComplete] = useState(false)
 
