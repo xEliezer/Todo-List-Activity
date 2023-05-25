@@ -2,7 +2,7 @@ import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 import { useEffect, useState } from 'react';
 
-function TodoList({ tasks, setTasks, addTask}) {
+function TodoList({ tasks, setTasks, addTask, deleteTask}) {
 
     const todolist = tasks.map((info, index) => (
         <TodoItem
@@ -13,7 +13,7 @@ function TodoList({ tasks, setTasks, addTask}) {
     ));
 
     useEffect(() =>{
-        
+        <TodoList />
     });
 
 
@@ -51,7 +51,7 @@ function TodoList({ tasks, setTasks, addTask}) {
                 {todolist}
             </div>
             <div className="container text-center">
-                <TodoForm setTasks={setTasks} addTask={addTask}/>
+                <TodoForm setTasks={setTasks} addTask={addTask} deleteTask={deleteTask}/>
             </div>
         </>
     )

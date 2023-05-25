@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function TodoForm({ setTasks, addTask }) {
+function TodoForm({ addTask }) {
 
     const [newTask, setNewTask] = useState({
         taskname: '',
@@ -15,7 +15,7 @@ function TodoForm({ setTasks, addTask }) {
         }))
     }
 
-    const newAddTask = () => {
+    const addNewTask = () => {
        addTask(newTask)
     }
 
@@ -38,8 +38,7 @@ function TodoForm({ setTasks, addTask }) {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                            <button onClick={newAddTask} type="button" className="btn btn-primary" data-bs-dismiss="modal">Add Task</button>
+                            <button onClick={addNewTask} type="button" className="btn btn-primary" data-bs-dismiss="modal">Add Task</button>
                         </div>
                     </div>
                 </div>

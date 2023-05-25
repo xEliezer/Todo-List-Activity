@@ -30,15 +30,26 @@ function App() {
     ])
   }
 
-  const deletTask = (newTask) => {
-    
+  const completeTask = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((tasks) => {
+        if (tasks.id === id) {
+          return { ...tasks, completed: !tasks.completed };
+        }
+        return tasks;
+      })
+    );
+  };
+
+  const deleteTask = (newTask) => {
+    setTasks((prevTasks) => 
+    prevTasks.filter((task) => task.Status !== newTask));
   }
-  // const [complete, setComplete] = useState(true);
 
   return (
     <>
 
-      <TodoList tasks={tasks} setTasks={setTasks} addTask={addTask}/>
+      <TodoList tasks={tasks} setTasks={setTasks} addTask={addTask} deleteTask={deleteTask}/>
 
     </>
   )
