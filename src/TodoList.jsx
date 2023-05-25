@@ -2,10 +2,13 @@ import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 import { useEffect, useState } from 'react';
 
-function TodoList({ tasks, setTasks, addTask, deleteTask}) {
+function TodoList({ tasks, setTasks, addTask, deleteTask, setCurrentIndex}) {
 
     const todolist = tasks.map((info, index) => (
         <TodoItem
+            setCurrentIndex={setCurrentIndex}
+            tasks={tasks}
+            setTasks={setTasks}
             tasknumber={index + 1}
             taskname={info.taskname}
             Status={info.Status}

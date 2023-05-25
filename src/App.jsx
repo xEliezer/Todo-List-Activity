@@ -23,6 +23,8 @@ function App() {
     }
   ]);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const addTask = (newTask) => {
     setTasks((prevTask) => [
       ...prevTask,
@@ -30,15 +32,11 @@ function App() {
     ])
   }
 
-  const deleteTask = (newTask) => {
-    setTasks((prevTasks) => 
-    prevTasks.filter((task) => task.Status !== newTask));
-  }
 
   return (
     <>
 
-      <TodoList tasks={tasks} setTasks={setTasks} addTask={addTask} deleteTask={deleteTask}/>
+      <TodoList setCurrentIndex={setCurrentIndex} tasks={tasks} setTasks={setTasks} addTask={addTask}/>
 
     </>
   )

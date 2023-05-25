@@ -2,12 +2,16 @@ import { useState } from "react"
 import TodoForm from "./TodoForm"
 
 
-function TodoItem({ tasknumber, taskname }) {
+function TodoItem({ tasknumber, taskname, setCurrentIndex, setTasks, tasks }) {
 
     const [complete, setComplete] = useState(false)
 
     const handleChange = () => {
         setComplete(!complete)
+    }
+
+    const deleteTask = () => {
+        setTasks(tasks.splice(setCurrentIndex, 1));
     }
 
 
@@ -32,7 +36,7 @@ function TodoItem({ tasknumber, taskname }) {
                             </label>
                         </div>
                         <div>
-                            <button type="button" className="btn btn-danger ms-4" >Delete</button>
+                            <button onClick={deleteTask} type="button" className="btn btn-danger ms-4" >Delete</button>
                         </div>
                     </div>
                 </div>
